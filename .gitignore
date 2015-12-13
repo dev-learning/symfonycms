@@ -1,8 +1,4 @@
 .idea
-var
 vendor
-web
 composer.lock
-*xml.dist
-README.md
 symfonycms.iml

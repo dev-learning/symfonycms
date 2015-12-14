@@ -4,6 +4,9 @@ namespace Model;
 
 class Model
 {
+    /**
+     * @var PDO
+     */
     private $pdo;
 
     public function __construct()

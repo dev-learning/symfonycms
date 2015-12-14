@@ -7,12 +7,19 @@ use Controller\Controller;
 
 class View
 {
+    /**
+     * @var Model
+     */
     private $model;
+
+    /**
+     * @var Controller
+     */
     private $controller;
 
-    public function __construct()
+    public function __construct(Controller $controller)
     {
         $this->model = new Model();
-        $this->controller = new Controller();
+        $this->controller = $controller;
     }
 }

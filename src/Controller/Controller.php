@@ -2,17 +2,18 @@
 
 namespace Controller;
 
-use Model\Model;
+use View\View;
 
 class Controller
 {
     /**
-     * @var Model
+     * @var View
      */
-    private $model;
+    public $view;
 
     public function __construct()
     {
-        $this->model = new Model();
+        $this->view = new View();
     }
+
 }

@@ -12,6 +12,11 @@ class Route
     /**
      * @var string
      */
+    private $module;
+
+    /**
+     * @var string
+     */
     private $controller;
 
     /**
@@ -34,8 +39,9 @@ class Route
         $filteredArray = array_filter($explodedUri);
         $filteredArray = array_values($filteredArray);
 
-        $this->controller = (isset($filteredArray[0]) ? $filteredArray[0] . 'Controller' : 'DefaultController');
-        $this->action = (isset($filteredArray[1]) ? $filteredArray[1] . 'Action' : 'IndexAction');
+        $this->module = (isset($filteredArray[0]) ? ucfirst($filteredArray[0])  : 'Index');
+        $this->controller = (isset($filteredArray[0]) ? ucfirst($filteredArray[0]) . 'Controller' : 'IndexController');
+        $this->action = (isset($filteredArray[1]) ? ucfirst($filteredArray[1]) . 'Action' : 'IndexAction');
 
         if (isset($filteredArray[0]))
         {
@@ -65,6 +71,14 @@ class Route
     /**
      * @return string
      */
+    public function getModule()
+    {
+        return $this->module;
+    }
+
+    /**
+     * @return string
+     */
     public function getController()
     {
         return $this->controller;
@@ -85,6 +99,4 @@ class Route
     {
         return $this->params;
     }
-
-
 }

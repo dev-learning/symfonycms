@@ -7,10 +7,10 @@ class Model
     /**
      * @var PDO
      */
-    private $pdo;
+    protected $db;
 
     public function __construct()
     {
-        $this->pdo = new PDO('mysql:host=localhost;dbname=cms', 'root', '');
+        $this->db = new \PDO('mysql:host=localhost;dbname=symfony', 'root', '');
     }
 }

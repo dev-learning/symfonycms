@@ -10,4 +10,10 @@ class ProductsController extends Controller
     {
 
     }
+
+
+    public function SchoenenAction($params = null)
+    {
+
+    }
 }

@@ -26,6 +26,4 @@ class ProductsModel extends Model
     {
         $this->ID = intval($ID);
     }
-
-
 }

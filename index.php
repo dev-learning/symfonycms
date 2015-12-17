@@ -10,5 +10,11 @@ require_once (__DIR__ . '/src/Modules/' . $route->getModule() . '/' . $route->ge
 
 $controller = 'Modules\\' . $route->getModule() . '\\' . $route->getController();
 $controllerObject = new $controller;
-
-$controllerObject->{$route->getAction()}();
+if (empty($route->getParams()))
+{
+    $controllerObject->{$route->getAction()}();
+}
+else
+{
+    $controllerObject->{$route->getAction($route->getParams())}();
+}

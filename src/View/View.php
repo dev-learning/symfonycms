@@ -24,7 +24,7 @@ class View extends \Smarty
     {
         foreach ($this->templates as $template)
         {
-            $this->display(dirname(__DIR__) . '/Modules/' . $template . 'View.tpl');
+            $this->display(dirname(__DIR__) . '/Template/' . ucfirst($template) . '.tpl');
         }
         return;
     }

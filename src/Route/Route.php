@@ -53,6 +53,7 @@ class Route
             unset($filteredArray[1]);
         }
 
+        $this->params = [];
         if (isset($filteredArray[2]))
         {
             $filteredArray = array_values($filteredArray);

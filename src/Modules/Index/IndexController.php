@@ -24,8 +24,8 @@ class IndexController extends Controller
 
     public function IndexAction()
     {
-        $this->view->addTemplate('Index/Index');
-        $this->view->assign('la', 'haha');
+        $this->view->addTemplate('Base/header');
+        $this->view->addTemplate('Base/footer');
         return $this->view->render();
     }
 }
